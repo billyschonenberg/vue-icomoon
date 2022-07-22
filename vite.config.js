@@ -8,15 +8,20 @@ const root = process.cwd();
 export default defineConfig({
   plugins: [vue()],
   build: {
-    target: "es2020",
-
     lib: {
-      entry: path.resolve(root, "src", "lib.js"),
+      entry: path.resolve(root, "src/lib.js"),
       name: "vue-icomoon",
-      formats: ["es", "umd"],
+      formats:['es', 'umd']
     },
     rollupOptions: {
       external: ["vue"],
+      output: {
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          vue: 'Vue'
+        }
+      }
     },
   },
 });

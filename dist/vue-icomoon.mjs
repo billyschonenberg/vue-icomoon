@@ -1,4 +1,4 @@
-function y(n, e, i, s, l, f, c, d) {
+function C(n, e, i, s, l, f, c, d) {
   var t = typeof n == "function" ? n.options : n;
   e && (t.render = e, t.staticRenderFns = i, t._compiled = !0), s && (t.functional = !0), f && (t._scopeId = "data-v-" + f);
   var o;
@@ -22,7 +22,7 @@ function y(n, e, i, s, l, f, c, d) {
     options: t
   };
 }
-const C = {
+const g = {
   name: "Icomoon",
   props: {
     iconSet: {
@@ -83,8 +83,9 @@ const C = {
       ...c ? {} : t
     };
     s && (u.width = s, u.height = s);
-    const _ = a.icon.paths.map((h, m) => {
-      const v = a.icon.attrs?.[m];
+    const _ = a.icon.paths.map((h, y) => {
+      var m;
+      const v = (m = a.icon.attrs) == null ? void 0 : m[y];
       return {
         d: h,
         ...!f && v ? v : {}
@@ -99,14 +100,14 @@ const C = {
     };
   }
 };
-var g = function() {
+var b = function() {
   var e = this, i = e._self._c;
   return e.currentIcon ? i("svg", e._b({ style: e.style, attrs: { viewBox: e.viewBox } }, "svg", e.svgProps, !1), [e._l(e.paths, function(s) {
     return i("path", { attrs: { d: s.d } });
   }), e.title ? i("title", [e._v(e._s(e.title))]) : e._e()], 2) : e._e();
-}, b = [], S = /* @__PURE__ */ y(C, g, b, !1, null, null, null, null);
-const w = S.exports, R = (n) => n && Array.isArray(n.icons) ? n.icons.map((e) => e.properties.name) : null;
+}, S = [], $ = /* @__PURE__ */ C(g, b, S, !1, null, null, null, null);
+const R = $.exports, B = (n) => n && Array.isArray(n.icons) ? n.icons.map((e) => e.properties.name) : null;
 export {
-  w as Icomoon,
-  R as iconList
+  R as Icomoon,
+  B as iconList
 };
